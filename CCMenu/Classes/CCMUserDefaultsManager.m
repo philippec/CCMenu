@@ -37,6 +37,10 @@ NSString *CCMDefaultsServerUrlHistoryKey = @"ServerHistory";
 		return;
 	NSMutableArray *mutableList = [[[self projectList] mutableCopy] autorelease];
 	[mutableList addObject:[self createEntryWithProject:projectName andURL:serverUrl]];
+    /* FIXME
+     * Sort doesn't need to be done on each call to this method; push up the stack.
+     */
+    [mutableList sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:CCMDefaultsProjectEntryNameKey ascending:YES], nil]];
 	[userDefaults setObject:mutableList forKey:CCMDefaultsProjectListKey];
 }
 
@@ -50,6 +54,7 @@ NSString *CCMDefaultsServerUrlHistoryKey = @"ServerHistory";
     NSArray *list = [userDefaults arrayForKey:CCMDefaultsProjectListKey];
     if(list != nil)
         return list;
+
     return [NSArray array];
 }
 

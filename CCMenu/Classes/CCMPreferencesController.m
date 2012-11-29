@@ -133,8 +133,6 @@ NSString *CCMPreferencesChangedNotification = @"CCMPreferencesChangedNotificatio
 
 - (NSArray *)convertProjectInfos:(NSArray *)projectInfos withServerUrl:(NSString *)serverUrl 
 {
-    [projectInfos sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil]];
-
 	NSMutableArray *result = [NSMutableArray array];
 
 	for(NSDictionary *projectInfo in projectInfos)
@@ -147,6 +145,7 @@ NSString *CCMPreferencesChangedNotification = @"CCMPreferencesChangedNotificatio
 			[listEntry setObject:[NSColor disabledControlTextColor] forKey:@"textColor"];
 		[result addObject:listEntry];
 	}
+    [result sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil]];
 	return result;
 }
 
