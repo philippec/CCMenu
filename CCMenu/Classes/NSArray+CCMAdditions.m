@@ -12,8 +12,10 @@
 
 - (id)initWithArray:(NSArray *)anArray
 {
-	[super init];
-	array = [anArray retain];
+	self = [super init];
+    if (self) {
+        array = [anArray retain];
+    }
 	return self;
 }
 

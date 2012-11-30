@@ -6,8 +6,10 @@
 
 - (id)initWithServerResponse:(NSData *)data
 {
-	[super init];
-	responseData = [data copy];
+	self = [super init];
+    if (self) {
+        responseData = [data copy];
+    }
 	return self;
 }
 

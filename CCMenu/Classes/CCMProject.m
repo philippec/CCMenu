@@ -17,8 +17,10 @@ static NSSet *infoKeys;
 
 - (id)initWithName:(NSString *)aName
 {
-	[super init];
-	name = [aName retain];
+	self = [super init];
+    if (self) {
+        name = [aName retain];
+    }
 	return self;
 }
 

@@ -20,8 +20,10 @@ static NSSet *infoKeys;
 
 - (id)initWithDictionary:(NSDictionary *)serverInfo
 {
-    [super init];
-    info = [serverInfo copy];
+    self = [super init];
+    if (self) {
+        info = [serverInfo copy];
+    }
     return self;
 }
 
