@@ -26,7 +26,9 @@
 	IBOutlet NSComboBox				*serverUrlComboBox;
 	IBOutlet NSMatrix				*serverTypeMatrix;
 	IBOutlet NSProgressIndicator	*testServerProgressIndicator;
-	IBOutlet NSArrayController		*chooseProjectsViewController;	
+	IBOutlet NSArrayController		*chooseProjectsViewController;
+	
+    IBOutlet NSSearchField          *searchField;
 }
 
 - (IBAction)showWindow:(id)sender;
@@ -51,6 +53,8 @@
 
 - (IBAction)soundSelected:(id)sender;
 - (NSArray *)availableSounds;
+
+- (IBAction)searchFieldUpdated:(id)sender;
 
 @end
 

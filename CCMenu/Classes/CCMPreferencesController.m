@@ -103,6 +103,7 @@ NSString *CCMPreferencesChangedNotification = @"CCMPreferencesChangedNotificatio
 		NSArray *projectInfos = [connection retrieveServerStatus];
 		[testServerProgressIndicator stopAnimation:self];
 		[chooseProjectsViewController setContent:[self convertProjectInfos:projectInfos withServerUrl:serverUrl]];
+        [chooseProjectsViewController setSortDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil]];
 		[sheetTabView selectNextTabViewItem:self];
 	}
 	@catch(NSException *exception) 
@@ -131,7 +132,7 @@ NSString *CCMPreferencesChangedNotification = @"CCMPreferencesChangedNotificatio
 	return nil;
 }
 
-- (NSArray *)convertProjectInfos:(NSArray *)projectInfos withServerUrl:(NSString *)serverUrl 
+- (NSArray *)convertProjectInfos:(NSArray *)projectInfos withServerUrl:(NSString *)serverUrl
 {
 	NSMutableArray *result = [NSMutableArray array];
 
@@ -141,11 +142,11 @@ NSString *CCMPreferencesChangedNotification = @"CCMPreferencesChangedNotificatio
 		NSString *projectName = [projectInfo objectForKey:@"name"];
 		[listEntry setObject:projectName forKey:@"name"];
 		[listEntry setObject:serverUrl forKey:@"server"];
-		if([defaultsManager projectListContainsProject:projectName onServerWithURL:serverUrl])
+		if([defaultsManager projectListContainsProject:projectName onServerWithURL:serverUrl]) {
 			[listEntry setObject:[NSColor disabledControlTextColor] forKey:@"textColor"];
+        }
 		[result addObject:listEntry];
 	}
-    [result sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil]];
 	return result;
 }
 
@@ -191,6 +192,17 @@ NSString *CCMPreferencesChangedNotification = @"CCMPreferencesChangedNotificatio
         }
     }
     return sounds;
+}
+
+- (IBAction)searchFieldUpdated:(id)sender {
+    NSString *searchString = [searchField stringValue];
+    if ([searchString length] > 0) {
+        NSPredicate *filter = [NSPredicate predicateWithFormat:@"name contains[cd] %@", searchString];
+        [chooseProjectsViewController setFilterPredicate: filter];
+    } else {
+        [chooseProjectsViewController setFilterPredicate: nil];
+    }
+
 }
 
 - (void)soundSelected:(id)sender

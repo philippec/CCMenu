@@ -39,7 +39,7 @@
     CCMSoundPlayer *soundPlayer = [[CCMSoundPlayer alloc] init];
     [soundPlayer start];
 
-	[growlAdaptor start]; 
+	[growlAdaptor start];
 
 	[serverMonitor setNotificationCenter:[NSNotificationCenter defaultCenter]];
 	[serverMonitor setNotificationFactory:[[[CCMBuildNotificationFactory alloc] init] autorelease]];
