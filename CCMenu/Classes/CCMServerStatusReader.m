@@ -47,6 +47,9 @@
             dateString = [dateString stringByReplacingCharactersInRange:rr withString:@" GMT"];
         }
     }
+    /* FIXME:
+     * we're spending a lot of time in this method, and it looks like it's causing cpu spikes.
+     */
     return [formatter dateFromString:dateString];
 }
 
