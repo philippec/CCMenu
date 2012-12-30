@@ -123,7 +123,7 @@
 		03C082D0134F9C530039E3BD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Contents/Frameworks;
+			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				0328D388135C1A2E00D35055 /* EDCommon.framework in CopyFiles */,
