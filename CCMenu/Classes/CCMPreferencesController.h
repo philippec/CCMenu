@@ -1,14 +1,12 @@
 
 #import "CCMWindowController.h"
 #import "CCMUserDefaultsManager.h"
-#import <Sparkle/Sparkle.h>
 
 
 @interface CCMPreferencesController : CCMWindowController 
 {
 	IBOutlet CCMUserDefaultsManager	*defaultsManager;
-	IBOutlet SUUpdater				*updater;
-	
+
 	IBOutlet NSPanel				*preferencesWindow;
 	IBOutlet NSView					*paneHolderView;
 	IBOutlet NSArrayController		*allProjectsViewController;
@@ -44,8 +42,6 @@
 - (IBAction)switchPreferencesPane:(id)sender;
 - (IBAction)preferencesChanged:(id)sender;
 
-- (IBAction)updateIntervalChanged:(id)sender;
-- (IBAction)checkForUpdateNow:(id)sender;
 
 - (NSString *)determineServerURL;
 - (NSArray *)convertProjectInfos:(NSArray *)projectInfos withServerUrl:(NSString *)serverUrl ;
