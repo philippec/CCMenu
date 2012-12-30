@@ -105,6 +105,7 @@
 		03DE25A0146AB86C00521846 /* CCMSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DE259F146AB86C00521846 /* CCMSoundPlayer.m */; };
 		03E288C3144F045E0026DAC4 /* NSObject+CCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E288C2144F045E0026DAC4 /* NSObject+CCMAdditions.m */; };
 		03E288C4144F045E0026DAC4 /* NSObject+CCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E288C2144F045E0026DAC4 /* NSObject+CCMAdditions.m */; };
+		37C869E3168FCC32006B2D0C /* CCMSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DE259F146AB86C00521846 /* CCMSoundPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -774,6 +775,7 @@
 				0301A785142C7D940041F299 /* CCMProjectStatusTest.m in Sources */,
 				03E288C4144F045E0026DAC4 /* NSObject+CCMAdditions.m in Sources */,
 				03BDCAC01456A00F000C3D32 /* CCMProjectBuilder.m in Sources */,
+				37C869E3168FCC32006B2D0C /* CCMSoundPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,7 +860,7 @@
 		038ABE49134F11090053F0D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -879,7 +881,7 @@
 		038ABE4A134F11090053F0D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -898,7 +900,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -921,7 +922,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

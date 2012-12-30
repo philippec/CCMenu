@@ -7,19 +7,19 @@
 
 - (NSString *)relativeDescriptionOfPastDate:(NSCalendarDate *)other
 {
-	int days, hours, mins;
+	NSInteger days, hours, mins;
 	[self years:NULL months:NULL days:&days hours:&hours minutes:&mins seconds:NULL sinceDate:other];
 	
 	if(days > 1)
-		return [NSString stringWithFormat:@"%d days ago", days];
+		return [NSString stringWithFormat:@"%ld days ago", (long)days];
 	if(days == 1)
 		return @"1 day ago";
 	if(hours > 1)
-		return [NSString stringWithFormat:@"%d hours ago", hours];
+		return [NSString stringWithFormat:@"%ld hours ago", (long)hours];
 	if(hours == 1)
 		return @"an hour ago";
 	if(mins > 1)
-		return [NSString stringWithFormat:@"%d minutes ago", mins];
+		return [NSString stringWithFormat:@"%ld minutes ago", (long)mins];
 	if(mins == 1)
 		return @"a minute ago";
 	return @"less than a minute ago";
@@ -37,15 +37,15 @@
 
 + (NSString *)descriptionOfInterval:(NSTimeInterval)timeInterval withSign:(BOOL)withSign
 {
-    long interval = (long)timeInterval;
+    NSInteger interval = timeInterval;
     NSString *sign = withSign ? ((interval < 0) ? @"-" : @"+") : @"";
-    interval = abs(interval);
+    interval = labs(interval);
 
     if(interval > 3600)
-        return [NSString stringWithFormat:@"%@%ld:%02ld:%02ld", sign, interval / 3600, (interval / 60) % 60, interval % 60];
+        return [NSString stringWithFormat:@"%@%ld:%02ld:%02ld", sign, (long)interval / 3600, ((long)interval / 60) % 60, (long)interval % 60];
     if(interval > 60)
-        return [NSString stringWithFormat:@"%@%ld:%02ld", sign, interval / 60, interval % 60];
-    return [NSString stringWithFormat:@"%@%lds", sign, interval];
+        return [NSString stringWithFormat:@"%@%ld:%02ld", sign, (long)interval / 60, (long)interval % 60];
+    return [NSString stringWithFormat:@"%@%lds", sign, (long)interval];
 }
 
 
