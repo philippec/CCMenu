@@ -56,14 +56,31 @@ struct {
 	{
 		if([buildResult isEqualToString:growlNotifications[i].key])
 		{
-			[GrowlApplicationBridge 	
-				notifyWithTitle:[NSString stringWithFormat:@"%@: %@", projectName, growlNotifications[i].name]
-					description:growlNotifications[i].description
-			   notificationName:growlNotifications[i].name
-					   iconData:nil
-					   priority:0
-					   isSticky:NO
-				   clickContext:nil];			
+			NSString *title = [NSString stringWithFormat:@"%@: %@", projectName, growlNotifications[i].name];
+			NSString *description = growlNotifications[i].description;
+			NSString *notificationName = growlNotifications[i].name;
+			if ([NSUserNotification class])
+			{
+				// Notification Center is available, use that
+				NSUserNotification *notification = [[[NSUserNotification alloc] init] autorelease];
+				notification.title = title;
+				notification.informativeText = description;
+
+				[[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+			}
+			else
+			{
+				// Fallback to Growl
+				[GrowlApplicationBridge
+					notifyWithTitle:title
+						description:description
+					notificationName:notificationName
+							iconData:nil
+							priority:0
+							isSticky:NO
+						clickContext:nil];
+
+			}
 			break;
 		}
 	}
