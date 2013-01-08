@@ -119,7 +119,7 @@
 				<string key="NSClassName">CCMUserDefaultsManager</string>
 			</object>
 			<object class="NSCustomObject" id="844876295">
-				<string key="NSClassName">CCMGrowlAdaptor</string>
+				<string key="NSClassName">CCMNotifier</string>
 			</object>
 			<object class="NSCustomObject" id="249743854">
 				<string key="NSClassName">CCMServerMonitor</string>

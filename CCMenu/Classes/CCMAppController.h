@@ -2,7 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "CCMPreferencesController.h"
 #import "CCMServerMonitor.h"
-#import "CCMGrowlAdaptor.h"
+#import "CCMNotifier.h"
 #import "CCMImageFactory.h"
 #import "CCMBuildTimer.h"
 #import "CCMSoundPlayer.h"
@@ -13,7 +13,7 @@
 	IBOutlet CCMPreferencesController	*preferencesController;
 	IBOutlet CCMImageFactory			*imageFactory;
 	IBOutlet CCMServerMonitor			*serverMonitor;
-	IBOutlet CCMGrowlAdaptor			*growlAdaptor;
+	IBOutlet CCMNotifier				*userNotifier;
 	CCMBuildTimer						*buildTimer;
 	CCMSoundPlayer						*soundPlayer;
 }

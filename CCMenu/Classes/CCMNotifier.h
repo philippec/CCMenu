@@ -2,7 +2,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface CCMGrowlAdaptor : NSObject 
+@interface CCMNotifier : NSObject 
 {
 	
 }

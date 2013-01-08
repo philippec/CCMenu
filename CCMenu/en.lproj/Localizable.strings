@@ -1,13 +1,13 @@
-/* Growl notification for successful build */
+/* Notification for successful build */
 "Broken build" = "Broken build";
 
-/* Growl notification for successful build */
+/* Notification for successful build */
 "Build still failing" = "Build still failing";
 
-/* Growl notification for successful build */
+/* Notification for successful build */
 "Build successful" = "Build successful";
 
-/* Growl notification for successful build */
+/* Notification for successful build */
 "Fixed build" = "Fixed build";
 
 /* No comment provided by engineer. */
