@@ -59,6 +59,7 @@ struct {
 			NSString *title = [NSString stringWithFormat:@"%@: %@", projectName, growlNotifications[i].name];
 			NSString *description = growlNotifications[i].description;
 			NSString *notificationName = growlNotifications[i].name;
+#if __MAC_OS_X_VERSION_MAX_ALLOWED >= 1080
 			if ([NSUserNotification class])
 			{
 				// Notification Center is available, use that
@@ -69,6 +70,7 @@ struct {
 				[[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 			}
 			else
+#endif
 			{
 				// Fallback to Growl
 				[GrowlApplicationBridge
