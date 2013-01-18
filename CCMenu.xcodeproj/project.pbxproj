@@ -903,7 +903,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = CCMenu/CCMenu.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -917,6 +917,7 @@
 				GCC_PREFIX_HEADER = "CCMenu/CCMenu-Prefix.pch";
 				INFOPLIST_FILE = "CCMenu/CCMenu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -927,7 +928,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = CCMenu/CCMenu.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -941,6 +942,7 @@
 				GCC_PREFIX_HEADER = "CCMenu/CCMenu-Prefix.pch";
 				INFOPLIST_FILE = "CCMenu/CCMenu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
