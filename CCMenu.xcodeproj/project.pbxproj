@@ -250,6 +250,7 @@
 		03DE259F146AB86C00521846 /* CCMSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMSoundPlayer.m; sourceTree = "<group>"; };
 		03E288C1144F045E0026DAC4 /* NSObject+CCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCMAdditions.h"; sourceTree = "<group>"; };
 		03E288C2144F045E0026DAC4 /* NSObject+CCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCMAdditions.m"; sourceTree = "<group>"; };
+		374E8EB016A9026600B93072 /* CCMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CCMenu.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +492,7 @@
 		038ABE23134F11090053F0D1 /* CCMenu */ = {
 			isa = PBXGroup;
 			children = (
+				374E8EB016A9026600B93072 /* CCMenu.entitlements */,
 				03C08274134F97940039E3BD /* Classes */,
 				03C082D5134F9CF90039E3BD /* Interface */,
 				0349BC59134F9EE600D2F269 /* Images */,
@@ -900,6 +902,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = CCMenu/CCMenu.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -922,6 +926,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = CCMenu/CCMenu.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
